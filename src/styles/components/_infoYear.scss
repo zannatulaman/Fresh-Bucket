@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700&display=swap');
+
+.info-year{
+   background-image: url("/images/infoYear/infoYear.png");
+   background-repeat: no-repeat;
+   border-radius: 20px;
+  
+   &__wrapper{
+        width: 100%;
+        padding: 0px 10%;  
+        position: relative;
+   } 
+    
+   
+   
+   &__details{
+      color: $lightColor;
+      text-align: center;
+     
+      &__image{
+         position: relative; 
+         
+         img {
+            display: block;
+            max-width: 100%;
+          }
+      
+          // Grape Image
+          img:first-child {
+            position: absolute;
+            // top: 0; 
+            // left: 0;
+            // width: 150px; // Adjust size as needed
+          }
+      
+          // Main Image (Big Plate)
+          .main-image {
+            position: absolute;
+            top: 20px; // Adjust top space as needed
+            left: 50%;
+            transform: translateX(-50%); // Center horizontally
+            width: 250px; // Adjust size as needed
+          }
+      
+          // Small Plate Image
+          .smallPlate {
+            position: absolute;
+            bottom: -30px; // Adjust the space below main image
+            right: 10%; // Adjust right space as needed
+            width: 70px; // Adjust size as needed
+            height: 70px;
+            border-radius: 50%;
+          }
+        
+        
+     }      
+     
+    .styled-text{
+       font-family: 'Be Vietnam Pro', sans-serif;
+       font-weight: 700;
+       font-size: 70px;
+       line-height: 84px;
+       color: $lightColor;    
+    }
+
+    .gi-diamonds{
+      color: $primaryBtnColor;
+      font-size: 38px;
+   }
+     
+}
+   
+}

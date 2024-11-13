@@ -1,0 +1,111 @@
+.product2{
+    background-image: url("/images/product2/midBanner.png");
+    height: 700px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+
+
+
+    .product2-wrapper{
+        position: relative;
+
+
+        .datails{
+            position: relative;
+            top: 50px;
+            left: 20px;
+            margin-bottom: 30px;
+            
+            .diamondIcon {
+                color: $lightColor ;
+            }
+    
+             .paragraph{
+                color: $lightColor ;
+             }
+    
+             .heading{
+                color: $lightColor ;
+             }
+            
+        }
+    
+        .buttons{
+            position: absolute;
+            top: 60px;
+            right: 30px;
+            background-color: $lightColor;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            width: 350px;
+            height: 36px ;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+
+            button{
+                width: 74px;
+                height: 30px;
+                border-radius: 5px;
+               
+            }
+        }
+
+        .main-grid{
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            width: 100%;
+            // gap: 20px;
+           
+
+            .product2-items{
+                background-color: $lightColor;
+                width: 300px;
+                height: 120px;
+                border-radius: 6px;
+                // border: 1px solid $lightColor;
+
+                .another-details{
+                       font-size: 1rem;
+                }
+            }
+
+            .midbannerInfo{
+                position: relative;
+
+                .midbanner-details{
+                      position: absolute;
+                      top: 10%;
+                      left: 30%;
+                }
+
+                .special-offer{
+                   
+                    font-size: 20px;
+                }
+
+                .discount{
+                    color: $secondaryBtnColor;
+                }
+
+                .shop-now{
+                    background-color: $lightColor;
+                    color:$secondaryBtnColor ;
+
+                }
+            }
+
+ 
+
+        }
+    
+       
+    }
+    
+    
+    
+}

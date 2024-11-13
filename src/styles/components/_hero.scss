@@ -1,0 +1,34 @@
+.hero{
+    background-image: url("/images/hero/heroBanner2.png");
+    height: 500px;
+    position: relative;
+ 
+        .hero-details{
+            position: absolute;
+            top: 20%;
+            left: 10%;
+
+            h2{
+                font-weight: 800;
+            }
+
+            p{
+             margin-top: 20px;
+              max-width: 40%;
+            }
+             
+        }
+
+        .hero-image{
+            position: absolute;
+            top:10%;
+            right: 10%;
+        }
+
+        .hero-image img{
+            width: 500px;
+        }
+     
+   
+
+}

@@ -1,0 +1,40 @@
+.banner{
+    
+    .organic-banner{
+          background-image: url("/images/banner/organicBanner.png");
+          width: 100% ;
+          height: 360px;
+          border-radius: 8px;
+
+          &__details{
+            margin-left: 30px;
+            color: $whiteColor;
+          }
+
+          .price-starting-btn{
+               background-color: #FF8A00;
+               color: $whiteColor;
+               width: 50px;
+               height: 24px;
+               border-radius: 5px;
+               border: none;
+          }
+    }
+
+    .sale-banner{
+        background-image: url("/images/banner/saleBanner.png");
+        width: 100% ;
+        height: 360px;
+        border-radius: 8px;
+
+        &__details{
+            margin-left: 30px;
+            color: $whiteColor;
+        }
+
+        &__paragraph{
+            font-size: 15px;
+            line-height: 1.5;
+        }
+  }
+}

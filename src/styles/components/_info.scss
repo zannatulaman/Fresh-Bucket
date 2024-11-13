@@ -1,0 +1,40 @@
+.info{
+     background-image: url("/images/info/infoBanner2.png");
+     
+
+    &__wrapper{
+        width: 100%;
+        padding: 0px 3%;
+    }
+
+    
+    &__veggiesImage{
+        //  width: 100%;
+        img{
+            width: 100%;
+            
+        }
+    }
+
+    &__details{
+        color: $primaryColor;
+        text-align: center;
+        
+        h1{
+            font-size: 2rem;
+            font-weight: bold;
+        }
+    }
+
+   &__manImage{
+        // width: 100%;
+
+        img{
+            width: 100%;
+            
+        }
+        
+   }
+
+
+}

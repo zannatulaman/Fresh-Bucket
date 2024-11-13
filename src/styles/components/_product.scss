@@ -1,0 +1,83 @@
+.product {
+
+
+    .product-items {
+      background-color: $lightCream;
+      border-radius: 20px;
+      border-top-right-radius: 25% ;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px 20px;
+      margin: 20px;
+      position: relative;
+
+    
+  
+      .discount-btn {
+        position: absolute;
+        top: 20px;
+        left: 0;
+        height: 31px;
+        width: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        background-color: $secondaryBtnColor;
+        color: white;
+        /* Only round the right side */
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        font-size: 15px;
+        font-weight: 400;
+      }
+  
+      .arrow-btn {
+        position: absolute;
+        z-index: 999;
+        top: 0;
+        right: 0;
+        background-color: $primaryBtnColor;
+        border-radius: 50%;
+        border: 10px solid $whiteColor;
+        height: 50px;
+        width: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // padding: 8px;
+        color: $whiteColor;
+        font-size: 24px;
+      }
+  
+      img {
+        border-radius: 50%;
+        border: 5px solid $secondaryBtnColor;
+        height: 230px;
+        width:  230px;
+        margin-top: 20px;
+      }
+
+      .hr-line{
+        border: 1px solid black;
+        height: 2px;
+        background-color: black; 
+    }
+
+  }
+
+}
+
+  
+
+  
+ 
+
+
+
+
+
+
+  
+  
+  
+
