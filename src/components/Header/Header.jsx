@@ -23,7 +23,7 @@ const Header = () => {
     <Navbar expand="lg" className="bg-dark p-3">
       <Container>
         {/* <Navbar.Brand href="#">Navbar scroll</Navbar.Brand> */}
-        <img src="logo.png" alt="logo" />
+        <img src="/public/logo.png" alt="logo" />
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -52,7 +52,7 @@ const Header = () => {
                 }}
               >
                 <a onClick={(e) => e.preventDefault()}>
-                  <img src="./images/navbar/icon.png" alt="icon" />
+                  <img src="/public/icon.png" alt="icon" />
                 </a>
               </Dropdown>
             </div>
