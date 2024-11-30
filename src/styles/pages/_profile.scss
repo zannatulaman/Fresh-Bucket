@@ -1,0 +1,61 @@
+.profile{
+    // background-image: url("/images/hero/heroBanner2.png");
+    background-color: #f9f7e7;
+     height: calc(100vh - 72px); 
+    overflow: hidden;
+   
+
+    .auth-wrapper{
+          display: flex;
+           align-items: center;
+           justify-content: center;
+           margin: 0 auto;
+           width: 100%;
+           height: 100%;
+           
+
+        .auth-form{
+             z-index: 99;
+            width: 100%;
+            padding:20px;
+            min-height: 500px;
+            background-color: $whiteColor;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+            max-width: 800px;
+            border-radius: 10px;
+
+            .d-flex{
+
+                img{
+                height: 125px;
+                width: 125px;
+                border-radius: 50%;
+              }
+
+                .profile-details{
+                color: #0B2A46E5;
+                    
+                  h2{
+                    font-size: 20px;
+                    font-weight: 800;
+                    font-style: inherit;
+                  }
+
+                  p{
+                     font-size: 16px;
+                     font-weight: 500;
+                  }
+
+            } 
+
+
+            }
+           
+
+            
+        }
+
+         
+
+    }
+}
