@@ -40,7 +40,7 @@ const ResetPassword = () => {
             <Input.Password
               type="password"
               className="default-input"
-              placeholder="Enter your password"
+              placeholder="Enter your new password"
               prefix={<MdLock size={20} />}
             />
          </Form.Item>
@@ -58,10 +58,12 @@ const ResetPassword = () => {
             <Input.Password
               type="password"
               className="default-input"
-              placeholder="Enter your password"
+              placeholder="Enter your confirm password"
               prefix={<MdLock size={20} />}
             />
          </Form.Item>
+
+        
         
              <br />
             <button className="primary-btn  w-100" style={{backgroundColor: "#ea4335"}}>Reset Password</button>
