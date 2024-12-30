@@ -1,0 +1,68 @@
+.curb-image {
+  position: relative;
+
+  .curb-image_text {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    
+
+    p {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .arrow-btn {
+      position: absolute;
+      top: 0;
+      left: 140px;
+      background-color: $primaryBtnColor;
+      border-radius: 50%;
+      border: none;
+      height: 50px;
+      width: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $whiteColor;
+      font-size: 24px;
+    }
+  }
+
+  // img{
+  //   width: 500px;
+  //   height: 500px;
+    
+  // }
+
+
+}
+
+ .rounded-image{
+
+      img{
+        border: 20px solid #f9f7e7;
+        border-radius: 50%;
+      }
+
+      p{
+        background-color: #f9f7e7;
+        padding: 20px 30px;
+        font-weight: 500;
+      }
+}
+
+.all-items{
+     background-color: #f9f7e7;
+     padding: 20px 20px;
+     border-radius: 20px;
+     
+    
+     
+     .categories{
+        display: flex;
+        flex-direction: column;
+        
+     }
+}

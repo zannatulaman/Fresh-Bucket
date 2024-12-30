@@ -65,7 +65,7 @@ const ResetPassword = () => {
 
         
         
-             <br />
+          <br />
             <button className="primary-btn  w-100" style={{backgroundColor: "#ea4335"}}>Reset Password</button>
            
         

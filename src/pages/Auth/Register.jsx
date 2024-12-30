@@ -125,7 +125,7 @@ const Register = () => {
           </button>
 
           <p className="para">
-            Already have an account? <Link>Login</Link>
+            Already have an account? <Link to={"/auth/login"}>Login</Link>
           </p>
         </Form>
       </div>

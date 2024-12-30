@@ -27,16 +27,17 @@ const Login = () => {
         values
       );
 
-      console.log("data", data);
+      console.log("data", data.token);
 
       if (data.success) {
-        localStorage.setItem("auth_token", data.token);
+         localStorage.setItem("auth_token", data.token);
+         
 
         toast.success("User login successful");
-        navigate(`/`);
+        navigate(`/auth/profile`);
       }
     } catch (error) {
-      console.log("User registered error", error);
+      console.log("User logged in error", error);
     }
   };
 
@@ -121,7 +122,8 @@ const Login = () => {
           </button>
 
           <p className="para">
-            Don’t have an account? Register?<Link>Register</Link>
+            Don’t have an account? Register?
+            <Link to={"/auth/register"}>Register</Link>
           </p>
         </Form>
       </div>

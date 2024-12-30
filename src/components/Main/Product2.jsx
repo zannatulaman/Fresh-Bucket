@@ -5,7 +5,7 @@ import Product from "./Product";
 import { product } from "../../staticData/data";
 
 const Product2 = () => {
-  const [isActiveButton, setIsActiveButton] = useState("all");
+  const [isActiveButton, setIsActiveButton] = useState(null);
   const [productList, setProductList] = useState();
   const [productItem, setProductItem] = useState(product);
 
