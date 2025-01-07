@@ -1,0 +1,35 @@
+.footer{
+    background-color: $footerColor;
+    // width: 1920px;
+    // height: 371px;
+
+    .footer_wrapper{
+        width: 100%;
+        padding: 30px 0px;
+
+        .description{
+            color: $lightColor;
+            font-size: 20px;
+
+            .para{
+                width:60%;
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
+.bottom-footer{
+    background-color: $bottomFooter;
+    // height: 68px;
+     
+    .bottom-footer-wrapper{
+            width: 100%;
+            padding: 30px;
+
+        .bottom-footer-para{
+            color: $lightColor;
+        }
+    }
+
+}

@@ -15,7 +15,7 @@ const Hero = () => {
               <img src="/images/hero/heroBanner.png" alt="" />
         </div>
       </div>
-      </div>
+    </div>
     // </div>
   );
 };

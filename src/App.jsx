@@ -2,6 +2,7 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import Banner from "./components/Main/Banner";
 import FoodStore from "./components/Main/FoodStore";
+import Footer from "./components/Main/Footer";
 import Hero from "./components/Main/Hero";
 import Info from "./components/Main/Info";
 import InfoYear from "./components/Main/InfoYear";
@@ -22,6 +23,7 @@ function App() {
       <Info></Info>
       <InfoYear></InfoYear>
       <FoodStore></FoodStore>
+      {/* <Footer></Footer> */}
     </>
   );
 }

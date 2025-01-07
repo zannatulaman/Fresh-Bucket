@@ -1,21 +1,26 @@
-.curb-image {
-  position: relative;
+.product_wrapper{
+       width: 100%;
+      //  padding: 0px 388px 0px 0px;
+      overflow: hidden;
+     
+     
+      .curb-image {
+      position: relative;
 
   .curb-image_text {
     position: absolute;
     display: flex;
     align-items: center;
-    
 
     p {
-      font-size: 18px;
+      font-size: 25px;
       font-weight: 600;
       line-height: 1.2;
     }
 
     .arrow-btn {
       position: absolute;
-      top: 0;
+      top: 20px;
       left: 140px;
       background-color: $primaryBtnColor;
       border-radius: 50%;
@@ -30,39 +35,46 @@
     }
   }
 
-  // img{
-  //   width: 500px;
-  //   height: 500px;
-    
-  // }
+  img{
+    width: 500px;
+    height: 745px;
 
-
+  }
 }
 
- .rounded-image{
+.rounded-image {
+  img {
+    border: 20px solid #f9f7e7;
+    border-radius: 50%;
+  }
 
-      img{
-        border: 20px solid #f9f7e7;
-        border-radius: 50%;
-      }
+  .card {
+    background-color: #f9f7e7;
+    padding: 10px 10px;
+    border-radius: 20px;
+    border: none;
+    width: 100%;
 
-      p{
-        background-color: #f9f7e7;
-        padding: 20px 30px;
-        font-weight: 500;
-      }
+    p{
+      padding: 30px;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 2;
+    }
+  }
 }
 
-.all-items{
-     background-color: #f9f7e7;
-     padding: 20px 20px;
-     border-radius: 20px;
-     
-    
-     
-     .categories{
-        display: flex;
-        flex-direction: column;
-        
-     }
+.all-items {
+  background-color: #f9f7e7;
+  padding: 20px 30px;
+  border-radius: 20px;
+  
+
+  .category {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    // gap: 10px;
+  }
+}
+
 }

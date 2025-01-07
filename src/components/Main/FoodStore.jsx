@@ -5,7 +5,7 @@ import { MdOutlineArrowOutward } from "react-icons/md";
 const FoodStore = () => {
   return (
     <div className="product mt-30 container">
-      <div className="">
+      <div className="product_wrapper">
         <div>
           <p className="paragraph">
             {" "}
@@ -14,7 +14,8 @@ const FoodStore = () => {
           </p>
           <h1 className="heading">Trusted Organic Food Store Conscious</h1>
         </div>
-
+          <br />
+          <br />
         <div className="flex align-center flex-gap-20">
           <div className="curb-image">
             <div className="curb-image_text">
@@ -29,17 +30,19 @@ const FoodStore = () => {
           </div>
 
           <div className="flex flex-direction-column flex-gap-20">
-            <div className="rounded-image flex align-center flex-gap-20">
+            <div className="rounded-image flex align-center flex-gap-10">
               <img
                 src="/public/images/food-store/Ellipse 5.png"
                 alt="rounded-image"
               />
-              <p>
-                The titles are organized to emphasize different aspects of the
-                organic offerings, starting from the overall concept of a
-                sustainable life to the specific components such as fresh
-                vegetables, fruits, and healthy foods.
-              </p>
+              <div className="card">
+                <p>
+                  The titles are organized to emphasize different aspects of the
+                  organic offerings, starting from the overall concept of a
+                  sustainable life to the specific components such as fresh
+                  vegetables, fruits, and healthy foods.
+                </p>
+              </div>
             </div>
 
             <div className="flex align-center flex-gap-20">
@@ -55,67 +58,69 @@ const FoodStore = () => {
 
             <div className="all-items">
               <div className="category">
-                <div className="flex align-center flex-gap-30">
-                  <p>
+                <div className="grid grid-cols-4 grid-gap-30">
+                  <div className="category">
                     <img
                       src="/public/images/food-store/check-circle.png"
                       alt="check-circle"
                     />
-                    fruits
-                  </p>
+                    <p>Fruits</p>
+                  </div>
 
-                  <p>
+                  <div className="category">
                     <img
                       src="/public/images/food-store/check-circle.png"
                       alt="check-circle"
                     />
-                    Breads
-                  </p>
-                  <p>
+                    <p>Breads</p>
+                  </div>
+
+                  <div className="category">
                     <img
                       src="/public/images/food-store/check-circle.png"
                       alt="check-circle"
                     />
-                    Juices
-                  </p>
-                  <p>
+                    <p>Juices</p>
+                  </div>
+
+                  <div className="category">
                     <img
                       src="/public/images/food-store/check-circle.png"
                       alt="check-circle"
                     />
-                    Juices
-                  </p>
+                    <p>Juices</p>
+                  </div>
+
+                  <div className="category">
+                    <img
+                      src="/public/images/food-store/check-circle.png"
+                      alt="check-circle"
+                    />
+                    <p>Vegetables</p>
+                  </div>
+
+                  <div className="category">
+                    <img
+                      src="/public/images/food-store/check-circle.png"
+                      alt="check-circle"
+                    />
+                    <p>Dried</p>
+                  </div>
+
+                  <div className="category">
+                    <img
+                      src="/public/images/food-store/check-circle.png"
+                      alt="check-circle"
+                    />
+                    <p>Dried</p>
+                  </div>
                 </div>
 
-                <div className="flex align-center flex-gap-30">
-                  <p>
-                    <img
-                      src="/public/images/food-store/check-circle.png"
-                      alt="check-circle"
-                    />
-                    Vegestables
-                  </p>
-                  <p>
-                    <img
-                      src="/public/images/food-store/check-circle.png"
-                      alt="check-circle"
-                    />
-                    Dried
-                  </p>
-                  <p>
-                    <img
-                      src="/public/images/food-store/check-circle.png"
-                      alt="check-circle"
-                    />
-                    Dried
-                  </p>
-                  <img src="/public/images/food-store/tomato.png" alt="" />
-                </div>
-                <button className="secondary-btn">
-                  Subscribe{" "}
-                  <FaRegArrowAltCircleRight></FaRegArrowAltCircleRight>
-                </button>
+                <img src="/public/images/food-store/tomato.png" alt="" />
               </div>
+              <button className="secondary-btn">
+                Subscribe <FaRegArrowAltCircleRight></FaRegArrowAltCircleRight>
+              </button>
             </div>
           </div>
         </div>

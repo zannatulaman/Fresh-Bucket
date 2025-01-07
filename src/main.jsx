@@ -20,6 +20,8 @@ import ResetPassword from './pages/AuthPassword/ResetPassword.jsx';
 import { Toaster } from 'sonner';
 import SingleProfile from './pages/AuthProfile/SingleProfile.jsx';
 import PrivateRoute from './pages/AuthProfile/PrivateRoute.jsx';
+import Home from './pages/Description/Home.jsx';
+import Details from './pages/Description/Details.jsx';
 
 
 const router = createBrowserRouter([
@@ -60,10 +62,18 @@ const router = createBrowserRouter([
         path: "/auth/profile",
         element: (
           <PrivateRoute>
-          <SingleProfile></SingleProfile>
+            <SingleProfile></SingleProfile>
           </PrivateRoute>
         ),
       },
+      {
+        path: "/product/description",
+        element: (<>
+                    <Home></Home>
+                    <Details></Details>
+                 </>),
+      },
+     
     ],
   },
 ]);
