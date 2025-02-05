@@ -1,40 +1,64 @@
 /* eslint-disable react/jsx-no-undef */
-import { FaRegUserCircle } from "react-icons/fa";
-import { MdOutlineMail } from "react-icons/md";
-import { MdLock } from "react-icons/md";
-import { BiTargetLock } from "react-icons/bi";
-import { FcGoogle } from "react-icons/fc";
 
-import {  Checkbox, Divider, Flex, Input, message } from "antd";
+import { Input } from "antd";
 import Form from "antd/es/form/Form";
-import { Link } from "react-router-dom";
+import axios, { Axios } from "axios";
+import { useState } from "react";
+import { MdOutlineMail } from "react-icons/md";
+import Cookies from "js-cookie";
 
-const onFinish = (values) => {
-  console.log("Success:", values);
-};
+
 const onFinishFailed = (errorInfo) => {
   console.log("Failed:", errorInfo);
 };
 
-
-
 const ForgetPassword = () => {
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+   const token = Cookies.get("auth_token");
+
+  const onFinish = async (values) => {
+    console.log("Success:", values);
+
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/api/user/forget-password",
+        {
+          headers: {
+            "auth-token": `${token}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      console.log("Response", response.data);
+    } catch (error) {
+      console.log("Error", error);
+    }
+  };
+ 
+
+ 
+
   return (
     <div className="auth-container">
-    <div className="auth-wrapper">
-      <Form className="auth-form"
-            name="register-form"
-            onFinish={onFinish}
-            onFinishFailed={onFinishFailed}
-            autoComplete="off"
+      <div className="auth-wrapper">
+        <Form
+          className="auth-form"
+          name="register-form"
+          onFinish={onFinish}
+          onFinishFailed={onFinishFailed}
+          autoComplete="off"
+        >
+          <div className="auth-form-details">
+            <h2>Forget Password</h2>
+            <br />
+            <p>
+              Enter your account email address. We will send a confimation email{" "}
+              <br /> to reset your password
+            </p>
+          </div>
 
-      >
-        <div className="auth-form-details">
-          <h2>Forget Password</h2>
-          <br />
-          <p>Enter your account email address. We will send a confimation email <br /> to reset your password</p>
-        </div>
-       
           <Form.Item
             name="email"
             rules={[
@@ -55,13 +79,16 @@ const ForgetPassword = () => {
               prefix={<MdOutlineMail size={20} />}
             />
           </Form.Item>
-            <button className="primary-btn  w-100" style={{backgroundColor: "#ea4335"}}>Get Otp</button>
-           
-        
-      </Form>
+          <button
+            className="primary-btn  w-100"
+            style={{ backgroundColor: "#ea4335" }}
+          >
+            Get Otp
+          </button>
+        </Form>
+      </div>
     </div>
-    </div>
-  )
-}
+  );
+};
 
-export default ForgetPassword
+export default ForgetPassword;

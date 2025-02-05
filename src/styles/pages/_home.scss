@@ -1,51 +1,113 @@
-.home{
-    // background-image: url("/images/hero/heroBanner2.png");
-    background-color: #F9F7E7;
-    height: 941px;
+.home {
+  // background-image: url("/images/hero/heroBanner2.png");
+  background-color: #f9f7e7;
+  height: 941px;
 
-    .auth-wrapper{
-           display: flex;
-           align-items: center;
-           justify-content: center;
-           width: 100%;
-           height: 100%;
-        //    padding: 20px;
+  .auth-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    //    padding: 20px;
 
-      .auth-form{
-            z-index: 99;
-            width: 100%;
-            padding:20px;
-            min-height: 300px;
-            background-color: $whiteColor;
-            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-            // max-width: 800px;
-            border-radius: 10px;
-            margin: 50px 0;
+    .auth-form {
+      z-index: 99;
+      width: 100%;
+      padding: 20px;
+      min-height: 300px;
+      background-color: $whiteColor;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+        rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+      // max-width: 800px;
+      border-radius: 10px;
+      margin: 70px 0;
 
-          .grid{
+      .grid {
+        .grid-left {
+          background-color: #f9f7e7;
+          border-radius: 20px;
+          border: 1px solid #fbbc05;
+          display: flex;
+          align-items: center;
+          justify-content: center;
 
-              .grid-left{
-                    background-color: #F9F7E7;
-                    border-radius: 20px;
-                    border: 1px solid #FBBC05;
-              }
-
-              .grid-right{
-                   
-                   h1{
-                      font-size: 30px;
-                      font-weight: 700;
-                   }
-                   span{
-                      color: #FBBC05;
-                      font-size: 20px;
-                   }
-              }
+          img {
+            width: 500px;
+            height: 500px;
           }
-    
         }
-    
-    }
 
-       
+        .grid-right {
+          h1 {
+            font-size: 30px;
+            font-weight: 700;
+          }
+          span {
+            color: #fbbc05;
+            font-size: 20px;
+          }
+
+          h2 {
+            font-size: 30px;
+            font-weight: 700;
+          }
+          h3 {
+            font-size: 18px;
+            color: #676b71;
+            text-decoration: line-through;
+          }
+          .discount {
+            background-color: #fff3f3;
+            border-radius: 62px;
+            border: none;
+            color: #ff3333;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 6px 14px;
+          }
+
+          .tags {
+            .icon {
+              background: $secondaryBtnColor;
+              color: $whiteColor;
+              padding: 7px;
+              border-radius: 50%;
+              font-size: 10px;
+            }
+          }
+
+        
+
+          .flex {
+            .quantity {
+              background: #f0f0f0;
+              border: none;
+              padding: 8px;
+              border-radius: 50px;
+
+              button {
+                background: #fff;
+                border: none;
+                width: 30px;
+                height: 30px;
+                // padding: 5px;
+                border-radius: 50%;
+                color: black;
+              }
+            }
+
+            h4 {
+              color: #ff3333;
+              font-size: 20px;
+            }
+          }
+
+          .buy-btn {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
 }

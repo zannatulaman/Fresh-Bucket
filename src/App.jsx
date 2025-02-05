@@ -1,3 +1,4 @@
+import { createContext, useState, useEffect } from "react";
 import "./App.css";
 import Header from "./components/Header/Header";
 import Banner from "./components/Main/Banner";
@@ -9,22 +10,37 @@ import InfoYear from "./components/Main/InfoYear";
 import Product from "./components/Main/Product";
 import Product2 from "./components/Main/Product2";
 import Service from "./components/Main/Service";
+import Cookies from "js-cookie";
 
+// Create Context
+export const ExampleContext = createContext();
 
 function App() {
+  // Ensure token is always a string
+  const [token, setToken] = useState("");
+
+  // Debugging: Check token value after state update
+  useEffect(() => {
+
+    const authToken = Cookies.get("auth_token");
+    setToken(authToken);
+    console.log("Updated Token:", token);
+  }, [token]);
+
   return (
-    <>
-      {/* <Header></Header> */}
-      <Hero></Hero>
-      <Service></Service>
-      <Product></Product>
-      <Product2></Product2>
-      <Banner></Banner>
-      <Info></Info>
-      <InfoYear></InfoYear>
-      <FoodStore></FoodStore>
-      {/* <Footer></Footer> */}
-    </>
+    <ExampleContext.Provider value={{ token, setToken }}>
+      <>
+        <Hero />
+        <Service />
+        <Product />
+        <Product2 />
+        <Banner />
+        <Info />
+        <InfoYear />
+        <FoodStore />
+        <Footer /> {/* Footer should be included */}
+      </>
+    </ExampleContext.Provider>
   );
 }
 

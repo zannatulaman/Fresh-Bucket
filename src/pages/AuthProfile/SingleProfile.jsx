@@ -3,46 +3,55 @@ import { CiMenuBurger } from "react-icons/ci";
 import { FaEdit } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { Col, Form, Input, Row } from "antd";
+import Cookies from "js-cookie";
 
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
 
-// CSS Modules, react-datepicker-cssmodules.css
-// import 'react-datepicker/dist/react-datepicker-cssmodules.css';
-
-// const onFinish = (values) => {
-//   console.log("Success:", values);
-// };
-
-// const onFinishFailed = (errorInfo) => {
-//   console.log("Failed:", errorInfo);
-// };
-
 const SingleProfile = () => {
   const [isActiveButton, setIsActiveButton] = useState(null);
-  const [token, setToken] = useState(localStorage.getItem("auth_token"));
+  const [token, setToken] = useState(Cookies.get("auth_token"));
   const [userData, setUserData] = useState(null);
+
+  // const [formData, setFormData] = useState({
+  //   firstName: "",
+  //   lastName: "",
+  //   email: "",
+  //   dob: "",
+  //   mobile: "",
+  //   gender: "",
+  //   memberSince: "",
+  // });
 
   console.log("UserData", userData);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.post(
-          "http://localhost:5000/api/profile/create",
-          {},
+        const response = await axios.get(
+          "http://localhost:5000/api/profile/get-profile",
 
           {
             headers: {
-              Authorization: `${token}`,
+              "auth-token": `${token}`,
               "Content-Type": "application/json",
             },
           }
         );
 
-        console.log("Response", response.data);
+        console.log("Response", response.data.profile);
 
-        setUserData(response.data);
+        setUserData(response.data.profile);
+
+        // setFormData({
+        //   firstName: response.data.profile?.firstName || "",
+        //   lastName: response.data.profile?.lastName || "",
+        //   email: response.data.profile?.email || "",
+        //   dob: response.data.profile?.dob || "",
+        //   mobile: response.data.profile?.mobile || "",
+        //   gender: response.data.profile?.gender || "",
+        //   memberSince: response.data.profile?.memberSince || "",
+        // });
       } catch (error) {
         console.log("Error", error);
       }
@@ -61,18 +70,19 @@ const SingleProfile = () => {
     }
   };
 
+  if (!userData) {
+    return <p>Loading</p>;
+  }
+
   return (
     <div className="profile">
       <div className="auth-wrapper">
         <div className="auth-form">
           <div className="d-flex align-center flex-gap-10">
-            <img
-              src="https://s3-alpha-sig.figma.com/img/66f5/3a1f/f627a86c924360d22d7555d4cb40d56b?Expires=1733702400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=GjKj~ZKluXfJ5cLwUXtBPEjbVhc9Arx0V28qjwRfVrA1tXMbKO3KBbNXc2~KW42MC~D~LmcW36KNmf4DDi9ZUe6mA7LMYXeYEVzyKZtRbW4YdRBLOxbu5m8l5eaAt6SIWza7Mi0USYUU3TQe-cZppAyZ-XFzcfeKTKN6hpbgliJa1wA20a7JO9bqu~CJwiwK5ulKRMxAT-IiO3-0I3WogAOLhlz7vaHO21UCYn9iRcK-WN1ugd3-EaGABJsgMu8WBag8q4XSvteXvMv9aS3~P2s5-IWSU2u7-bmUZ13Q99qBTITvz0tmEJCl~zprqTOUmZL41ZzgmKZXPuha6uG~ZQ__"
-              alt="gentle-man"
-            />
+            <img src={userData?.image} alt="gentle-woman" />
             <div className="profile-details">
-              <h2>Tahsan Rahman Khan</h2>
-              <p>tahsan@gmail.com</p>
+              <h2>{userData?.firstName}</h2>
+              <p>{userData?.email}</p>
             </div>
           </div>
           <div className="profile-btn mt-30">
@@ -116,7 +126,7 @@ const SingleProfile = () => {
             >
               <Row gutter={16}>
                 <Col span={12}>
-                  {/* <Form.Item
+                  <Form.Item
                     className="firstName"
                     label={
                       <span style={{ color: "#0B2A46E5", fontWeight: "500" }}>
@@ -134,10 +144,10 @@ const SingleProfile = () => {
                     <Input
                       type="text"
                       className="default-input"
-                      placeholder="Enter your first name"
+                      placeholder="Enter your name"
+                      defaultValue={userData?.firstName}
                     />
-                  </Form.Item> */}
-                  <h1 style={{ color: "black" }}>{userData?.firstName}</h1>
+                  </Form.Item>
                 </Col>
                 <Col span={12}>
                   <Form.Item
@@ -158,10 +168,12 @@ const SingleProfile = () => {
                       type="text"
                       className="default-input"
                       placeholder="Enter your last name"
+                      defaultValue={userData?.lastName}
                     />
                   </Form.Item>
                 </Col>
               </Row>
+
               <Row gutter={16}>
                 <Col span={12}>
                   <Form.Item
@@ -184,6 +196,7 @@ const SingleProfile = () => {
                       type="email"
                       className="default-input"
                       placeholder="Enter your email"
+                      defaultValue={userData?.email}
                     />
                   </Form.Item>
                 </Col>
@@ -207,6 +220,7 @@ const SingleProfile = () => {
                       type="date"
                       className="default-input"
                       placeholder="Enter your date of birth"
+                      defaultValue={userData?.dob}
                     />
                   </Form.Item>
                 </Col>
@@ -232,6 +246,7 @@ const SingleProfile = () => {
                       type="tel"
                       className="default-input"
                       placeholder="Enter your mobile number"
+                      defaultValue={userData?.phone}
                     />
                   </Form.Item>
                 </Col>
@@ -251,6 +266,7 @@ const SingleProfile = () => {
                       type="text"
                       className="default-input"
                       placeholder="Enter your gender"
+                      defaultValue={userData?.gender}
                     />
                   </Form.Item>
                 </Col>
@@ -265,10 +281,11 @@ const SingleProfile = () => {
                 style={{ margin: "0px" }}
               >
                 <Input
-                  type="date"
+                  type="text"
                   className="default-input"
                   placeholder="Enter membership start date"
                   title="Enter membership start date"
+                  defaultValue={userData?.member}
                 />
               </Form.Item>
             </Form>

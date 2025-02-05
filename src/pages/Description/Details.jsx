@@ -1,4 +1,3 @@
-
 import { FaCheckCircle } from "react-icons/fa";
 
 const Details = () => {
@@ -6,7 +5,9 @@ const Details = () => {
     <div className="details container mt-30">
       <div className="details-wrapper">
         <h4>Description</h4>
-        <hr />
+        <hr className="colored-line" />
+        <br />
+
         <div className="grid grid-cols-2 grid-gap-30">
           <div className="left-grid">
             <p>
@@ -33,19 +34,20 @@ const Details = () => {
             </p>
             <div>
               <p>
-                <FaCheckCircle /> 100 g of fresh leaves provides.
+                <FaCheckCircle className="icon" /> 100 g of fresh leaves
+                provides.
               </p>
               <p>
-                <FaCheckCircle />
-                Aliquam ac est at augue volutpat elementum.
+                <FaCheckCircle className="icon" /> Aliquam ac est at augue
+                volutpat elementum.
               </p>
               <p>
-                <FaCheckCircle />
-                Quisque nec enim eget sapien molestie.
+                <FaCheckCircle className="icon" /> Quisque nec enim eget sapien
+                molestie.
               </p>
               <p>
-                <FaCheckCircle />
-                Proin convallis odio volutpat finibus posuere.
+                <FaCheckCircle className="icon" /> Proin convallis odio volutpat
+                finibus posuere.
               </p>
             </div>
             <p>
@@ -56,16 +58,32 @@ const Details = () => {
           <div className="right-grid">
             <img
               src="https://s3-alpha-sig.figma.com/img/f59f/1a36/606440519ea1c5c82e23b225b6ee0828?Expires=1737331200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=lqTHux6cLmuORUJwNGVWY0lf82p5fSTW1siXMKpXZKnLhqIKcDzc3i-a4w~~o6TEhEIsy1tiRLhwfKIbvdGgSo8tK40oN12klfrVjXP2eMlPcXb7HkuU2ocbwVXeQPI2hGqj58r~3j1iUoAtu50L~gLbkb51K5RhqqrDprzXf~ljopdGshFig1HAyMONgnLzqriDq8fup~9TFbS8fLtOy94DTTntKt0jCME3T39cJJW~qTs7QXyryzpiwHmpEY8NLZHqFlwhRN8U1C-aco-5UOgoKI4vzSWPbdZZQ7W4idfR-FE2bupB0n-TqtA3iDktrqoqvN6H7sFvREaPRtiaQA__"
-              alt="" height={"357px"} width={"637"}
+              alt=""
+              // height={"357px"}
+              // width={"637px"}
             />
-            <div className="right-grid-bottom">
+            <div className="right-grid-bottom flex align-center justify-between">
+              <div className="token flex align-center justify-center flex-gap-20">
+                <img src="/public/images/details/token.png" alt="" />
+                <div>
+                  <strong>64% Discount</strong>
+                  <p>Save your 64% money with us</p>
+                </div>
+              </div>
 
+              <div className="token flex align-center justify-center flex-gap-10">
+                <img src="/public/images/details/leaf .png" alt="" />
+                <div>
+                  <strong>100% Organic</strong>
+                  <p>100% Organic Vegetables</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
-export default Details
+export default Details;

@@ -1,5 +1,33 @@
+import {
+  faFacebook,
+  faInstagram,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
+import { FaDiceD6 } from "react-icons/fa6";
 
-const Home = () => {
+const Home = ({product}) => {
+
+  console.log('Home Product', product);
+  const [isActiveBtn, setActiveBtn] = useState("medium");
+
+  const handleClick = (e) => {
+    if (e === "small") {
+      setActiveBtn(e);
+    }
+    if (e === "medium") {
+      setActiveBtn(e);
+    }
+    if (e === "large") {
+      setActiveBtn(e);
+    }
+    if (e === "x-large") {
+      setActiveBtn(e);
+    }
+  };
+
+  
   return (
     <div className="home">
       <div className="home-wrapper container">
@@ -8,12 +36,12 @@ const Home = () => {
             <div className="grid grid-cols-2 grid-gap-30">
               <div className="grid-left">
                 <img
-                  src="https://s3-alpha-sig.figma.com/img/c9d4/8b77/26a8df718ef41626c767cfcb0fc89ae1?Expires=1737331200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=LXhDwDLwwTx41XR93zgZqzQ2YhievZZQT-kynO6h6Maovy3iZFOltCtcVPcINptb~3OIHXuMEJkdhkEikbQ9J8bB54zWhJvMDZ5Dq7EJIi3rGqH-b2wtb140h0Sx791piKQHOS03WjQgKL3CmDD8Gf3w~~8TTiGDuprk5crfmuazi1IMDmLy8FeLVxdiZwuCCEXxF27HhSD6U8U~Oh3mhjmUTok9Qarjohh897kJ9kLEUYvG5kpbhbVcFAPBXvHNjGAV3oB4rlq~cS4McuToEYhY9aibhWjRjoTE~A0NZAaqMWXNoJaO2p0xG2Wksag4hLcPYMmM9hMlwh~t2exDjA__"
+                  src={product?.image}
                   alt="veggies"
                 />
               </div>
               <div className="grid-right">
-                <h1 className="ml-10">Chinese Cabbage</h1>
+                <h1 className="ml-10">{product?.name}</h1>
                 <span>
                   {" "}
                   &#9733; &#9733; &#9733; &#9733; &#9734;{" "}
@@ -22,7 +50,7 @@ const Home = () => {
                 <div className="flex align-items-center flex-gap-30">
                   <h2>$60.00</h2>
                   <h3>$120.00</h3>
-                  <button>40% off</button>
+                  <button className="discount">40% off</button>
                 </div>
                 <p>
                   Class aptent taciti sociosqu ad litora torquent per conubia
@@ -30,29 +58,76 @@ const Home = () => {
                   consequat nec, ultrices et ipsum. Nulla varius magna a
                   consequat pulvinar.
                 </p>
-                <div>
-                  <p>
-                    <strong>Category:</strong> Vegetables
-                  </p>
-                  <p>
-                    <strong>Tags:</strong> Vegetables
-                  </p>
+                <hr />
+                <div className="tags flex align-center justify-between">
+                  <div>
+                    <p>
+                      <strong>Category:</strong> {product.type}
+                    </p>
+                    <p>
+                      <strong>Tags:</strong> Vegetables Healthy chinese Green
+                      Cabbage
+                    </p>
+                  </div>
+                  <div>
+                    <FontAwesomeIcon className="icon" icon={faFacebook} />{" "}
+                    <FontAwesomeIcon className="icon" icon={faTwitter} />{" "}
+                    <FontAwesomeIcon className="icon" icon={faInstagram} />{" "}
+                  </div>
                 </div>
-                <div>
-                    <p>Choose Size</p>
-                    <button>Small</button>
-                    <button>Medium</button>
-                    <button>Large</button>
-                    <button>X-Large</button>
+                <hr />
+                <p>Choose Size</p>
+                <div 
+                // className="all-buttons"
+                >
+                  <button
+                    onClick={() => handleClick("small")}
+                    className={
+                      isActiveBtn === "small" ? "chooseBtn" : "all-buttons"
+                    }
+                  >
+                    Small
+                  </button>
+                  <button
+                    onClick={() => handleClick("medium")}
+                    className={
+                      isActiveBtn === "medium" ? "chooseBtn" : "all-buttons"
+                    }
+                  >
+                    Medium
+                  </button>
+                  <button
+                    onClick={() => handleClick("large")}
+                    className={
+                      isActiveBtn === "large" ? "chooseBtn" : "all-buttons"
+                    }
+                  >
+                    Large
+                  </button>
+                  <button
+                    onClick={() => handleClick("x-large")}
+                    className={
+                      isActiveBtn === "x-large" ? "chooseBtn" : "all-buttons"
+                    }
+                  >
+                    X-Large
+                  </button>
                 </div>
-                <div>
-                   <p>Quantity</p>
-                   <button>- 5 + </button>
-                   <button>Out of Stock</button>
+                <br />
+                <hr />
+                <p>Quantity</p>
+                <div className="flex align-center  flex-gap-20">
+                  <div className="quantity">
+                    <button>-</button> 1 <button> + </button>
+                  </div>
+                  <h4>Out of Stock</h4>
                 </div>
                 <br />
                 <br />
-                <button>Buy Now</button>
+                <button className="buy-btn secondary-btn">
+                  {" "}
+                  <FaDiceD6 /> Buy Now
+                </button>
               </div>
             </div>
           </div>
@@ -60,6 +135,6 @@ const Home = () => {
       </div>
     </div>
   );
-}
+};
 
-export default Home
+export default Home;

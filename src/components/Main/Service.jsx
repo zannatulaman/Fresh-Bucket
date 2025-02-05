@@ -4,7 +4,7 @@ const Service = () => {
      
   return (
     <div className="service mt-30 container">
-      <div className="service-flex flex align-center justify-around flex-wrap">
+      <div className="service-flex flex align-center justify-between flex-wrap">
         <div className="service-items">
           <div className="service-image">
             <img src="images/service/delivery.png" alt="delivery" style={{backgroundColor: "#FBBC05"}}/>

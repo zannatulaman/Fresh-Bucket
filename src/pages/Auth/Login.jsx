@@ -10,7 +10,7 @@ import Form from "antd/es/form/Form";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "sonner";
-
+import Cookies from "js-cookie";
 const onFinishFailed = (errorInfo) => {
   console.log("Failed:", errorInfo);
 };
@@ -27,12 +27,11 @@ const Login = () => {
         values
       );
 
-      console.log("data", data.token);
+      // console.log("data", data.token);
 
       if (data.success) {
-         localStorage.setItem("auth_token", data.token);
-         
-
+        //  localStorage.setItem("auth_token", data.token);
+        Cookies.set("auth_token", data.token);
         toast.success("User login successful");
         navigate(`/auth/profile`);
       }

@@ -14,11 +14,11 @@ const FoodStore = () => {
           </p>
           <h1 className="heading">Trusted Organic Food Store Conscious</h1>
         </div>
-          <br />
-          <br />
-        <div className="flex align-center flex-gap-20">
-          <div className="curb-image">
-            <div className="curb-image_text">
+        <br />
+        <br />
+        <div className="flex align-center justify-center flex-gap-20 w-100">
+          <div className="curb-card">
+            <div className="curb-card-text">
               <p>
                 Explore our <br /> solutions
               </p>
@@ -26,10 +26,14 @@ const FoodStore = () => {
                 <MdOutlineArrowOutward />
               </button>
             </div>
-            <img src="/public/images/food-store/Union.png" alt="" />
+            <img
+              src="/public/images/food-store/Union.png"
+              alt=""
+              className="curb-image"
+            />
           </div>
 
-          <div className="flex flex-direction-column flex-gap-20">
+          <div className=" foodCards flex flex-direction-column flex-gap-20">
             <div className="rounded-image flex align-center flex-gap-10">
               <img
                 src="/public/images/food-store/Ellipse 5.png"
@@ -45,7 +49,7 @@ const FoodStore = () => {
               </div>
             </div>
 
-            <div className="flex align-center flex-gap-20">
+            <div className="flex align-center flex-gap-20 food-card-images">
               <img
                 src="/public/images/food-store/Rectangle 38.png"
                 alt="rectangle-imge"
@@ -54,7 +58,7 @@ const FoodStore = () => {
                 src="/public/images/food-store/Rectangle 39.png"
                 alt="rectangle39-img"
               />
-            </div>
+            </div>                                                                           
 
             <div className="all-items">
               <div className="category">

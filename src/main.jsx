@@ -22,6 +22,8 @@ import SingleProfile from './pages/AuthProfile/SingleProfile.jsx';
 import PrivateRoute from './pages/AuthProfile/PrivateRoute.jsx';
 import Home from './pages/Description/Home.jsx';
 import Details from './pages/Description/Details.jsx';
+import Product from './pages/Description/Product.jsx';
+import ProductDetails from './pages/Description/ProductDetails.jsx';
 
 
 const router = createBrowserRouter([
@@ -67,11 +69,8 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/product/description",
-        element: (<>
-                    <Home></Home>
-                    <Details></Details>
-                 </>),
+        path: "/product/description/:id",
+        element: <ProductDetails></ProductDetails>,
       },
      
     ],

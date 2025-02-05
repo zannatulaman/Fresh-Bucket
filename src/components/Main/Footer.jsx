@@ -10,7 +10,7 @@ const Footer = () => {
     <>
       <div className="footer mt-30">
         <div className="footer_wrapper container">
-          <div className="grid grid-cols-4">
+          <div className="grid grid-cols-4 grid-gap-30">
             <div className="description">
               <img
                 src="/public/images/footer/footerImage.png"
@@ -28,6 +28,7 @@ const Footer = () => {
             </div>
             <div className="description">
               <h3>Categories</h3>
+              <br />
               <p>About Us</p>
               <p>Shop</p>
               <p>Contact Us</p>
@@ -35,26 +36,24 @@ const Footer = () => {
             </div>
             <div className="description">
               <h3>My Account</h3>
+              <br />
               <p>Support</p>
               <p>Your quotes</p>
               <p>Track your order</p>
             </div>
             <div className="description">
               <h3>Contact</h3>
+              <br />
               <p>techserve4u@gmail.com</p>
               <p>+123-589-9763</p>
-              <p>
-                King Street,Malbourne
-                <br />
-                Australia
-              </p>
+              <p>King Street, Malbourne Australia</p>
             </div>
           </div>
         </div>
       </div>
       <div className="bottom-footer">
-        <div className="bottom-footer-wrapper">
-          <div className="flex align-items-center justify-around">
+        <div className="bottom-footer-wrapper container">
+          <div className="flex align-center justify-between">
             <p className="bottom-footer-para">
               2024. All right reserved design by techserve4u
             </p>
