@@ -31,12 +31,10 @@ const Header = () => {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Product</Nav.Link>
-            <Nav.Link href="#action2">Blog</Nav.Link>
-            <Nav.Link href="#action2">Portfolio</Nav.Link>
-            <Nav.Link href="#action2">Pages</Nav.Link>
-            <Nav.Link href="#action2">Contact</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/product">Product</Nav.Link>
+            <Nav.Link href="/blog">Blog</Nav.Link>
+            <Nav.Link href="/contact">Contact</Nav.Link>
           </Nav>
           <Form className="d-flex flex-gap-25">
             <div className="input-form">
@@ -51,10 +49,13 @@ const Header = () => {
                   items,
                 }}
               >
-                <a onClick={(e) => e.preventDefault()}>
-                  <img src="/public/icon.png" alt="icon" />
-                </a>
+                <Link href="#" onClick={(e) => e.preventDefault()}>
+                  <img src="/user.png" alt="user" />
+                </Link>
               </Dropdown>
+            </div>
+            <div className="cart-icon">
+              <img src="/cart.png" alt="cart"/>
             </div>
           </Form>
         </Navbar.Collapse>

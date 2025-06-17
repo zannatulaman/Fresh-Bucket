@@ -7,8 +7,8 @@ import Footer from "./components/Main/Footer";
 import Hero from "./components/Main/Hero";
 import Info from "./components/Main/Info";
 import InfoYear from "./components/Main/InfoYear";
-import Product from "./components/Main/Product";
-import Product2 from "./components/Main/Product2";
+import Product from "./pages/product/Product";
+import Product2 from "./components/Main/Product";
 import Service from "./components/Main/Service";
 import Cookies from "js-cookie";
 
@@ -32,13 +32,12 @@ function App() {
       <>
         <Hero />
         <Service />
-        <Product />
+        {/* <Product /> */}
         <Product2 />
         <Banner />
         <Info />
         <InfoYear />
         <FoodStore />
-        <Footer /> {/* Footer should be included */}
       </>
     </ExampleContext.Provider>
   );

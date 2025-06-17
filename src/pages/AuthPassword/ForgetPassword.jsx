@@ -6,39 +6,29 @@ import axios, { Axios } from "axios";
 import { useState } from "react";
 import { MdOutlineMail } from "react-icons/md";
 import Cookies from "js-cookie";
-
+import { toast } from "sonner";
 
 const onFinishFailed = (errorInfo) => {
   console.log("Failed:", errorInfo);
 };
 
 const ForgetPassword = () => {
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-   const token = Cookies.get("auth_token");
-
   const onFinish = async (values) => {
     console.log("Success:", values);
 
     try {
       const response = await axios.post(
         "http://localhost:5000/api/user/forget-password",
-        {
-          headers: {
-            "auth-token": `${token}`,
-            "Content-Type": "application/json",
-          },
-        }
+        values
       );
 
-      console.log("Response", response.data);
+      if (response.data.success) {
+        toast.success("Otp sent successfully! check your email ");
+      }
     } catch (error) {
       console.log("Error", error);
     }
   };
- 
-
- 
 
   return (
     <div className="auth-container">
@@ -73,10 +63,12 @@ const ForgetPassword = () => {
             ]}
           >
             <Input
+              name="email"
               type="email"
               className="default-input"
               placeholder="Enter your email"
               prefix={<MdOutlineMail size={20} />}
+              // onChange={(e)=> setEmail(e.target.value)}
             />
           </Form.Item>
           <button

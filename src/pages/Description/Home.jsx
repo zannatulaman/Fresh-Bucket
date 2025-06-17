@@ -1,16 +1,51 @@
+/* eslint-disable react/prop-types */
 import {
   faFacebook,
   faInstagram,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaDiceD6 } from "react-icons/fa6";
+import Cookies from "js-cookie";
+import axios from "axios";
+import { toast } from "sonner";
 
-const Home = ({product}) => {
-
-  console.log('Home Product', product);
+const Home = ({ product }) => {
+  const [token, setToken] = useState(Cookies.get("auth_token"));
   const [isActiveBtn, setActiveBtn] = useState("medium");
+  const [userData, setUserData] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:5000/api/profile/get-profile",
+
+          {
+            headers: {
+              "auth-token": `${token}`,
+              "Content-Type": "application/json",
+            },
+          }
+        );
+
+        console.log("Response", response.data.profile);
+
+        setUserData(response.data.profile);
+      } catch (error) {
+        console.log("Error", error);
+      }
+    };
+
+    fetchData();
+  }, [token]);
+
+  if (!token) {
+    return "Token not found";
+  }
+
+  console.log("Userdata", userData);
 
   const handleClick = (e) => {
     if (e === "small") {
@@ -27,7 +62,38 @@ const Home = ({product}) => {
     }
   };
 
-  
+  const handleOrder = async () => {
+    const orderBody = {
+      userId: userData.user,
+      productId: product._id,
+      quantity: 1,
+      price: product.price,
+    };
+
+    console.log("Orderbody", orderBody);
+
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/order/create-order",
+        orderBody,
+        {
+          headers: {
+            "auth-token": `${token}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (response.data.success) {
+        toast.success(`${response.data.message}`);
+      }
+    } catch (error) {
+      console.log("Error", error);
+    }
+  };
+
+  console.log("Product:", product);
+
   return (
     <div className="home">
       <div className="home-wrapper container">
@@ -35,10 +101,7 @@ const Home = ({product}) => {
           <div className="auth-form">
             <div className="grid grid-cols-2 grid-gap-30">
               <div className="grid-left">
-                <img
-                  src={product?.image}
-                  alt="veggies"
-                />
+                <img src={product?.image} alt="veggies" />
               </div>
               <div className="grid-right">
                 <h1 className="ml-10">{product?.name}</h1>
@@ -77,7 +140,7 @@ const Home = ({product}) => {
                 </div>
                 <hr />
                 <p>Choose Size</p>
-                <div 
+                <div
                 // className="all-buttons"
                 >
                   <button
@@ -124,7 +187,7 @@ const Home = ({product}) => {
                 </div>
                 <br />
                 <br />
-                <button className="buy-btn secondary-btn">
+                <button className="buy-btn secondary-btn" onClick={handleOrder}>
                   {" "}
                   <FaDiceD6 /> Buy Now
                 </button>

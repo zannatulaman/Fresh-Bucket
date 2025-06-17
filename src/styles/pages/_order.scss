@@ -1,0 +1,95 @@
+// .orders-container {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: center;
+//   gap: 20px;
+//   margin-top: 30px;
+// }
+
+// .order-card {
+//   background: #fff;
+//   border-radius: 15px;
+//   padding: 15px;
+//   width: 250px;
+//   text-align: center;
+//   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+//   transition: transform 0.3s ease-in-out;
+
+//   &:hover {
+//     transform: translateY(-5px);
+//   }
+
+//   .order-image {
+//     width: 100%;
+//     height: 180px;
+//     object-fit: cover;
+//     border-radius: 10px;
+//     margin-bottom: 10px;
+//   }
+
+//   .order-title {
+//     font-size: 18px;
+//     font-weight: bold;
+//     color: #333;
+//   }
+
+//   .order-email {
+//     font-size: 14px;
+//     color: #777;
+//     margin-bottom: 8px;
+//   }
+
+//   .order-details {
+//     display: flex;
+//     justify-content: space-between;
+//     font-size: 14px;
+//     font-weight: 600;
+
+//     .price {
+//       color: #28a745; // Green for price
+//     }
+
+//     .quantity {
+//       color: #007bff; // Blue for quantity
+//     }
+//   }
+// }
+
+// Orders Section
+.orders-section {
+  max-width: 1200px;
+  margin: 20px auto;
+
+  h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+  }
+
+  .orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border: 1px solid $border-color;
+
+    th,
+    td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid $border-color;
+    }
+
+    // th {
+    //   background-color: $bg-light;
+    // }
+
+    td {
+      &.approved {
+        color: $green;
+      }
+
+      &.pending {
+        color: $orange;
+      }
+    }
+  }
+}

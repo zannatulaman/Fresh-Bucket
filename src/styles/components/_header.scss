@@ -38,3 +38,13 @@
     margin-top: 20px;
   }
 }
+
+.cart-icon img {
+  width: 50px;
+  height: 50px;
+  color: $secondaryBtnColor;
+
+  @include responsive(600px) {
+    margin-top: 20px;
+  }
+}

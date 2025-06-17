@@ -1,5 +1,4 @@
 /* eslint-disable react/jsx-no-undef */
-import { FaRegUserCircle } from "react-icons/fa";
 import { MdOutlineMail } from "react-icons/md";
 import { MdLock } from "react-icons/md";
 import { BiTargetLock } from "react-icons/bi";
@@ -31,7 +30,7 @@ const Login = () => {
 
       if (data.success) {
         //  localStorage.setItem("auth_token", data.token);
-        Cookies.set("auth_token", data.token);
+        Cookies.set("auth_token", data.token , {expires: 7 });
         toast.success("User login successful");
         navigate(`/auth/profile`);
       }
